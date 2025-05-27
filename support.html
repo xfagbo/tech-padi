@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DarevelopX tech support for Blip, Starlink, and cybersecurity. Fast, safe, and affordable services!">
+    <title>DarevelopX Tech Padi - Dope Tech Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for new design */
+        body {
+            background: #1a202c; /* Dark mode */
+            color: #e2e8f0;
+        }
+        .header {
+            position: sticky;
+            top: 0;
+            background: #2d3748;
+            z-index: 50;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #00ff00, #00b7eb); /* Neon green to blue */
+            border-radius: 0 0 50px 50px;
+        }
+        .btn {
+            transition: all 0.3s ease;
+            background: #00ff00;
+            color: #1a202c;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            background: #00b7eb;
+            color: white;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #2d3748;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 255, 0, 0.3);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #00ff00;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            background: #2d3748;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            display: none;
+            flex-direction: column;
+        }
+        .chatbot-header {
+            background: #00ff00;
+            color: #1a202c;
+            padding: 12px;
+            border-radius: 12px 12px 0 0;
+        }
+        .chatbot-body {
+            padding: 12px;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        .chatbot-input input {
+            background: #4a5568;
+            color: #e2e8f0;
+            border: 1px solid #00ff00;
+            border-radius: 6px;
+            padding: 10px;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #00b7eb;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            display: none;
+        }
+        .faq-toggle {
+            cursor: pointer;
+            color: #00ff00;
+        }
+        .faq-content {
+            display: none;
+        }
+        .faq-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">DarevelopX Tech Padi</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-green-400 smooth-scroll">Home</a></li>
+                    <li><a href="#services" class="hover:text-green-400 smooth-scroll">Services</a></li>
+                    <li><a href="#about" class="hover:text-green-400 smooth-scroll">About</a></li>
+                    <li><a href="#contact" class="hover:text-green-400 smooth-scroll">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 text-center hero-bg">
+        <div class="container mx-auto px-4">
+            <h2 id="typing-text" class="text-5xl font-bold mb-6"></h2>
+            <p class="text-xl mb-8">DarevelopX I dey fix your tech wahala 💪</p>
+            <button class="btn font-bold py-3 px-8 rounded-lg animate-pulse" onclick="openPopup()">Hire Me Now!</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Wetin I Sabi Do</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <i class="fas fa-cog text-4xl text-green-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Tech Setup</h3>
+                    <p>I go hook you up with Blip for secure file sharing or Starlink Gen 3 for 284 Mbps Wi-Fi. No stress, just vibes!</p>
+                    <p class="faq-toggle mt-4">How I go set am up? <i class="fas fa-chevron-down"></i></p>
+                    <div class="faq-content mt-2 text-sm">
+                        <p>Download Blip from Google Play, drag file, scan QR code. For Starlink, plug Gen 3, use app, pair in 2 mins!</p>
+                    </div>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <i class="fas fa-shield-alt text-4xl text-green-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Cybersecurity</h3>
+                    <p>Block DarevelopX’s 3,200 weekly cyberattacks with strong passwords, 2FA, and safe tools like Blip. Your biz dey safe!</p>
+                    <p class="faq-toggle mt-4">How I go stay safe? <i class="fas fa-chevron-down"></i></p>
+                    <div class="faq-content mt-2 text-sm">
+                        <p>Use Blip’s encryption, avoid public Wi-Fi, and update Starlink firmware regular to dodge hackers.</p>
+                    </div>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <i class="fas fa-chalkboard-teacher text-4xl text-green-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Tech Training</h3>
+                    <p>Learn Blip, Starlink, or Canva like pro. My workshops go make you shine for DarevelopX tech scene!</p>
+                    <p class="faq-toggle mt-4">Wetin I go learn? <i class="fas fa-chevron-down"></i></p>
+                    <div class="faq-content mt-2 text-sm">
+                        <p>Master Blip for file sharing, Starlink for fast Wi-Fi, or Canva for dope content. ₦2k–₦10k per class!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Who I Be</h2>
+            <p class="text-lg mb-6">I be DarevelopX tech support guru wey sabi content creation and startup gist. I don help plenty clients fix devices, set up Starlink, and dodge hackers. My mission na to make your tech hustle blow, no matter the 3,200 cyberattacks wey dey hit DarevelopX weekly! 😎</p>
+            <button class="btn font-bold py-3 px-8 rounded-lg" onclick="openPopup()">Work With Me!</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Holla Your Padi!</h2>
+            <p class="text-lg mb-6">Wan fix tech wahala or learn tools like Blip? Hit me up, I go respond sharp-sharp! 🚀</p>
+            <div class="max-w-md mx-auto">
+                <p class="text-lg"><i class="fas fa-phone-alt mr-2"></i>WhatsApp: +234-8124-93-1302</p>
+                <p class="text-lg"><i class="fas fa-envelope mr-2"></i>Email: darevelopx@gmail.com</p>
+                <p class="text-lg"><i class="fab fa-x-twitter mr-2"></i>Follow me on X: @DarevelopX</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Contact Form -->
+    <div id="contactPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <h2 class="text-2xl font-bold mb-4">Holla Me Sharp-Sharp!</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" class="w-full p-3 mb-4 border border-green-400 rounded" required>
+                <input type="email" id="email" placeholder="Your Email" class="w-full p-3 mb-4 border border-green-400 rounded" required>
+                <textarea id="message" placeholder="Wetin You Wan Talk?" class="w-full p-3 mb-4 border border-green-400 rounded" rows="4" required></textarea>
+                <button type="submit" class="btn font-bold py-2 px-6 rounded">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">
+            <h3 class="text-lg font-semibold">DarevelopX Tech Padi Bot</h3>
+        </div>
+        <div id="chatbotBody" class="chatbot-body">
+            <p><strong>Bot:</strong> Yo, wetin dey? Need help with Blip, Starlink, or tech wahala? Ask me! 😎</p>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="if(event.key === 'Enter') sendChat()">
+        </div>
+    </div>
+    <button class="fixed bottom-4 right-4 bg-green-400 text-gray-900 p-3 rounded-full shadow-lg" onclick="toggleChatbot()"><i class="fas fa-comment-alt"></i> Chat Me!</button>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- JavaScript -->
+    <script>
+        // Typing Animation for Hero
+        const text = "Your Tech Padi for DarevelopX Hustle! 🚀";
+        let index = 0;
+        function type() {
+            if (index < text.length) {
+                document.getElementById('typing-text').innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
+            }
+        }
+        window.onload = type;
+
+        // Smooth Scrolling
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Popup Contact Form
+        function openPopup() {
+            document.getElementById('contactPopup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('contactPopup').style.display = 'none';
+            document.getElementById('contactForm').reset();
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            alert(`Message sent! Name: ${name}, Email: ${email}, Message: ${message}`);
+            closePopup();
+            // Add server-side email integration later
+        });
+
+        // Chatbot
+        function toggleChatbot() {
+            const chatbot = document.getElementById('chatbot');
+            chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';
+        }
+
+        function sendChat() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatbotBody = document.getElementById('chatbotBody');
+            chatbotBody.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+
+            let response = "Yo, I dey here to help! Wetin you wan know more about? 😎";
+            if (message.toLowerCase().includes('blip')) {
+                response = "Blip na fire app for sending big files—99TB sef! E dey lock files with encryption, so hackers no fit touch am. Wan set am up? I fit hook you for ₦5k!";
+            } else if (message.toLowerCase().includes('starlink')) {
+                response = "Starlink Gen 3 dey give 284 Mbps speed, fit connect 235 devices. Need setup for your hustle? I go do am for ₦10k!";
+            } else if (message.toLowerCase().includes('hackers') || message.toLowerCase().includes('cyber')) {
+                response = "DarevelopX get 3,200 cyberattacks weekly! Use Blip for safe file sharing and strong passwords for Starlink. Wan secure your biz? I dey charge ₦20k for audit!";
+            }
+
+            chatbotBody.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+            input.value = '';
+        }
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                content.classList.toggle('active');
+                const icon = toggle.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>
